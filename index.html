@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flora Gleam Pruning Services - Expert Tree Care & Cutting</title>
+<style>
+  /* Google Fonts Inter for modern typography */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+  /* CSS Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, h1, h2, h3, h4, p, ul, li, figure {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #e6f2e6 0%, #ffffff 100%);
+    color: #374151; /* neutral gray */
+    line-height: 1.6;
+    font-size: 18px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    color: #065f46; /* dark green */
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+    outline-offset: 2px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+
+  /* Layout container */
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* Header*/
+  header {
+    background-color: #fefefe;
+    padding: 16px 0;
+    border-bottom: 1px solid #d1d5db;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #047857;
+    letter-spacing: 0.03em;
+  }
+  nav {
+    display: flex;
+    gap: 24px;
+  }
+  nav a {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #065f46;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  nav a:hover, nav a:focus {
+    background-color: #d1fae5;
+    outline: none;
+  }
+
+  /* Hamburger menu */
+  .mobile-menu-button {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .mobile-menu-button svg {
+    fill: #065f46;
+    width: 28px;
+    height: 28px;
+  }
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    background: #f9fafb;
+    padding: 16px;
+    position: absolute;
+    top: 72px;
+    right: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  .mobile-nav.show {
+    display: flex;
+  }
+
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 96px 24px 80px;
+    position: relative;
+    overflow: visible;
+  }
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #064e3b;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+  .hero p {
+    color: #4b5563;
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, #134e4a 0%, #22c55e 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(34, 197, 94, 0.4);
+    outline: none;
+  }
+
+  /* Animated tree silhouette in hero background */
+  .tree-bg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.2;
+    width: 400px;
+    height: 200px;
+    background: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6d1c7805-6c92-4313-ad53-bbbe9682b4b1.png') no-repeat center/contain;
+    pointer-events: none;
+    user-select: none;
+    will-change: transform;
+    animation: sway 8s ease-in-out infinite;
+  }
+  @keyframes sway {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(calc(-50% + 10px)) translateY(-5px); }
+  }
+
+  /* Main Content */
+  main {
+    flex-grow: 1;
+    padding-top: 40px;
+    padding-bottom: 64px;
+    background: #f9fafb;
+  }
+
+  /* Sections with cards */
+  section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  h2.section-title {
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: #065f46;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  /* Services Section */
+  .services-grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .service-card img {
+    border-radius: 12px;
+    max-height: 180px;
+    object-fit: cover;
+  }
+  .service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #065f46;
+  }
+  .service-card p {
+    flex-grow: 1;
+    color: #4b5563;
+  }
+  .service-price {
+    font-weight: 700;
+    color: #16a34a;
+    font-size: 1.25rem;
+  }
+
+  /* Gallery Section */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    cursor: zoom-in;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .gallery-item:hover, .gallery-item:focus {
+    transform: scale(1.05);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+    outline: none;
+  }
+  .gallery-item img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  /* Article Section (Simulated content) */
+  .article {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    word-break: break-word;
+  }
+  .article p {
+    margin-bottom: 1.5em;
+  }
+  .article h3 {
+    margin-top: 2em;
+    margin-bottom: 0.6em;
+    font-weight: 700;
+    color: #047857;
+  }
+  .article img {
+    margin: 24px 0;
+    border-radius: 12px;
+  }
+
+  /* Disclaimer Section */
+  .disclaimer, .customer-satisfaction, .address-section {
+    max-width: 900px;
+    margin: 0 auto 48px;
+    padding: 24px;
+    font-size: 0.875rem;
+    color: #6b7280;
+    border-radius: 12px;
+    background-color: #fefce8; /* subtle yellow */
+    border: 1px solid #fde68a;
+  }
+  .disclaimer strong {
+    color: #b45309;
+  }
+  .customer-satisfaction {
+    background: #d1fae5; /* subtle green */
+    border: 1px solid #22c55e;
+    color: #065f46;
+    font-weight: 600;
+    text-align: center;
+    font-size: 1.25rem;
+    border-radius: 16px;
+  }
+
+  /* Footer */
+  footer {
+    background: #065f46;
+    color: white;
+    padding: 24px 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  /* Responsive Breakpoints */
+  @media (max-width: 767px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    nav {
+      display: none;
+    }
+    .mobile-menu-button {
+      display: block;
+    }
+    .services-grid {
+      grid-template-columns: 1fr;
+      padding: 0 12px;
+    }
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      padding: 0 12px;
+    }
+    .article {
+      padding: 16px;
+      border-radius: 12px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .services-grid {
+      grid-template-columns: repeat(2,1fr);
+    }
+    .gallery-grid {
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    nav {
+      display: flex;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <a href="#" class="logo" aria-label="Flora Gleam Pruning Homepage">Flora Gleam Pruning</a>
+    <nav role="navigation" aria-label="Primary navigation" class="nav-desktop">
+     <a href="index.html" tabindex="0"aria-current="page">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+    </nav>
+    <button class="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="mobile-nav" role="navigation" aria-label="Mobile primary navigation" hidden>
+   <a href="index.html" tabindex="0"aria-current="page">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+  </nav>
+</header>
+<section class="hero">
+  <div class="container">
+    <h1>Expert Tree Pruning & Care Services For a Greener Tomorrow</h1>
+    <p>Your trusted partner in tree cutting, pruning, and landscape maintenance with a commitment to environmental care, safety, and customer satisfaction.</p>
+    <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Request a Quote</button>
+  </div>
+  <div class="tree-bg" aria-hidden="true"></div>
+</section>
+
+<main>
+  <section id="services" aria-label="Our pruning and tree cutting services">
+    <h2 class="section-title">Our Services</h2>
+    <div class="services-grid">
+      <article class="service-card" tabindex="0">
+        <img src="s1.jpeg" alt="Healthy mature tree being pruned by an expert professional with safety gear" />
+        <h3>Professional Tree Pruning</h3>
+        <p>Enhance tree health and aesthetics with our expert pruning techniques ensuring safety and natural beauty.</p>
+        <div class="service-price">$120 - $350</div>
+      </article>
+      <article class="service-card" tabindex="0">
+        <img src="s2.jpeg" alt="Worker carefully performing tree cutting with professional chainsaw and safety equipment" />
+        <h3>Safe Tree Cutting</h3>
+        <p>Efficient and safe removal of hazardous trees or unwanted growth with environmentally friendly methods.</p>
+        <div class="service-price">$250 - $750</div>
+      </article>
+      <article class="service-card" tabindex="0">
+        <img src="s3.jpeg" alt="Specialized machinery grinding down tree stump in a yard" />
+        <h3>Stump Grinding & Removal</h3>
+        <p>Complete removal of tree stumps to restore your landscape and prevent pest infestations.</p>
+        <div class="service-price">$100 - $400</div>
+      </article>
+      <article class="service-card" tabindex="0">
+        <img src="s4.jpeg" alt="Emergency tree removal service responding to fallen tree after storm" />
+        <h3>Emergency Tree Services</h3>
+        <p>Rapid response for storm damage or unexpected tree hazards to protect your property and family.</p>
+        <div class="service-price">Starting at $500</div>
+      </article>
+      <article class="service-card" tabindex="0">
+        <img src="s5.jpeg" alt="Professionals performing seasonal tree maintenance and inspection" />
+        <h3>Seasonal Tree Maintenance</h3>
+        <p>Keep your trees healthy and vibrant year-round with scheduled care and expert inspections.</p>
+        <div class="service-price">$100/month (package)</div>
+      </article>
+      <article class="service-card" tabindex="0">
+        <img src="s6.jpeg" alt="Landscape design with trimmed trees and manicured garden in residence" />
+        <h3>Landscape & Tree Design</h3>
+        <p>Plan and create stunning green spaces with professional landscaping and tree design services.</p>
+        <div class="service-price">Consultation & quotes available</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="gallery" aria-label="Gallery of pruning and tree cutting projects">
+    <h2 class="section-title">Project Gallery</h2>
+    <div class="gallery-grid">
+      <figure class="gallery-item" tabindex="0">
+        <img src="g1.jpeg" alt="Before and after images showing detailed pruning of a large oak tree with expert care" />
+      </figure>
+      <figure class="gallery-item" tabindex="0">
+        <img src="g2.jpeg" alt="Technician safely cutting down a tall tree in residential area using rope and harness" />
+      </figure>
+      <figure class="gallery-item" tabindex="0">
+        <img src="g3.jpeg" alt="Close up of stump grinding machine reducing tree stump to mulch in yard" />
+      </figure>
+      <figure class="gallery-item" tabindex="0">
+        <img src="g4.jpeg" alt="Emergency tree removal after storm with fallen tree blocking road in urban area" />
+      </figure>
+      <figure class="gallery-item" tabindex="0">
+        <img src="g5.jpeg" alt="Team performing seasonal pruning and trimming on multiple trees in park setting" />
+      </figure>
+      <figure class="gallery-item" tabindex="0">
+        <img src="g6.jpeg" alt="Elegant backyard with professionally designed tree layout and manicured shrubs" />
+      </figure>
+      <figure class="gallery-item" tabindex="0">
+        <img src="g7.jpeg" alt="Array of professional tree cutting and pruning equipment lined up for service" />
+      </figure>
+      <figure class="gallery-item" tabindex="0">
+        <img src="g8.jpeg" alt="Worker wearing full protective safety gear pruning tree branches at height" />
+      </figure>
+      <figure class="gallery-item" tabindex="0">
+        <img src="g9.jpeg" alt="Close-up of freshly trimmed healthy green leaves on ornamental tree" />
+      </figure>
+      <figure class="gallery-item" tabindex="0">
+        <img src="g10.jpeg" alt="Happy customers admiring newly pruned and landscaped garden area" />
+      </figure>
+    </div>
+  </section>
+
+  <section id="pricing" aria-label="Service pricing details" style="margin-top: 64px;">
+    <h2 class="section-title">Service Pricing</h2>
+    <div class="container" style="max-width: 700px; margin: 0 auto;">
+    <table role="table" aria-label="Service pricing table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 1rem;">
+      <thead><tr style="border-bottom: 3px solid #22c55e;">
+        <th style="padding: 12px;">Service</th>
+        <th style="padding: 12px;">Description</th>
+        <th style="padding: 12px; text-align: right;">Price Range</th>
+      </tr></thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #e5e7eb;">
+          <td style="padding: 12px; font-weight: 600;">Tree Pruning</td>
+          <td style="padding: 12px;">Improve health & safety by removing dead or dangerous branches</td>
+          <td style="padding: 12px; text-align: right;">$120 - $350</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e5e7eb;">
+          <td style="padding: 12px; font-weight: 600;">Tree Cutting</td>
+          <td style="padding: 12px;">Safe removal of trees that are hazardous or unwanted</td>
+          <td style="padding: 12px; text-align: right;">$250 - $750</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e5e7eb;">
+          <td style="padding: 12px; font-weight: 600;">Stump Grinding</td>
+          <td style="padding: 12px;">Complete grinding and removal of tree stumps</td>
+          <td style="padding: 12px; text-align: right;">$100 - $400</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #e5e7eb;">
+          <td style="padding: 12px; font-weight: 600;">Emergency Tree Services</td>
+          <td style="padding: 12px;">Rapid response for storm or storm damage emergencies</td>
+          <td style="padding: 12px; text-align: right;">From $500</td>
+        </tr>
+        <tr>
+          <td style="padding: 12px; font-weight: 600;">Seasonal Maintenance</td>
+          <td style="padding: 12px;">Scheduled health checkups and pruning</td>
+          <td style="padding: 12px; text-align: right;">$100 per month</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <section id="articles" aria-label="Informative articles related to pruning and tree care">
+    <h2 class="section-title">Featured Articles & Insights</h2>
+    <article class="article" tabindex="0">
+      <h3>Comprehensive Guide to Tree Pruning for Health and Safety</h3>
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8a038e5d-8ee7-411c-a66d-356f361952fc.png" alt="Detailed pruning of large oak tree branches in springtime" />
+      <p>Tree pruning is vital for maintaining the health, appearance, and safety of your trees. By selectively removing dead or overcrowded branches...</p>
+      <p>Pruning promotes new growth by increasing sunlight and air circulation. Proper pruning techniques also help prevent disease and damage from storms...</p>
+      <h3>Choosing the Right Time for Tree Cutting</h3>
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bbcb1560-ec5d-4e56-bbab-a561d9b0146d.png" alt="Seasonal tree cutting preparation with workers and equipment" />
+      <p>The correct timing of tree cutting is critical to ensuring minimal harm to your yard and environment. Generally, late fall or winter months are ideal for most tree species since the trees are dormant...</p>
+      <p>Emergency cutting may be necessary after storms or when trees pose immediate hazards. Our specialists evaluate the risk and recommend the best course of action...</p>
+      <h3>Why Stump Grinding Is Important After Tree Removal</h3>
+      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ae92ca62-98bd-40c2-80e8-563d43d3faf3.png" alt="Heavy machinery grinding tree stump in a public park setting" />
+      <p>Removing the stump after tree cutting is essential to stop the spread of pests and fungi, ease landscaping, and prevent injury. Stump grinding pulverizes the remnant wood so it can be leveled with surrounding ground...</p>
+      <p>Our professional equipment ensures safe and thorough stump removal and allows for clean replanting or redesign of your outdoor space...</p>
+    </article>
+
+    <!-- Simulated large content by repeated paragraphs with accessibility -->
+    <article class="article" aria-label="Additional detailed content about Flora Gleam Pruning" tabindex="0">
+      <h3>Our Commitment to Ecological and Sustainable Tree Services</h3>
+      <p>At Flora Gleam Pruning, we prioritize sustainable and environmentally friendly practices in all our tree care services. We ensure minimal ecological impact through responsible pruning, waste recycling, and habitat preservation...</p>
+      <p>Understanding tree biology allows us to nurture healthy growth cycles, improve urban canopy resilience, and promote biodiversity in your landscape. Our certified arborists use best arboricultural practices aligned with local environmental standards.</p>
+      <p>We engage in ongoing education and community outreach to keep you informed about responsible tree management and environmental stewardship.</p>
+      <p>By choosing Flora Gleam, you contribute to greener neighborhoods supporting enhanced air quality, shade provision, and aesthetic values that benefit all.</p>
+      <!-- Repeated to simulate large content -->
+      <p>At Flora Gleam Pruning, we prioritize sustainable and environmentally friendly practices in all our tree care services. We ensure minimal ecological impact through responsible pruning, waste recycling, and habitat preservation...</p>
+      <p>Understanding tree biology allows us to nurture healthy growth cycles, improve urban canopy resilience, and promote biodiversity in your landscape. Our certified arborists use best arboricultural practices aligned with local environmental standards.</p>
+      <p>We engage in ongoing education and community outreach to keep you informed about responsible tree management and environmental stewardship.</p>
+      <p>By choosing Flora Gleam, you contribute to greener neighborhoods supporting enhanced air quality, shade provision, and aesthetic values that benefit all.</p>
+      <p>At Flora Gleam Pruning, we prioritize sustainable and environmentally friendly practices in all our tree care services. We ensure minimal ecological impact through responsible pruning, waste recycling, and habitat preservation...</p>
+      <p>Understanding tree biology allows us to nurture healthy growth cycles, improve urban canopy resilience, and promote biodiversity in your landscape. Our certified arborists use best arboricultural practices aligned with local environmental standards.</p>
+      <p>We engage in ongoing education and community outreach to keep you informed about responsible tree management and environmental stewardship.</p>
+      <p>By choosing Flora Gleam, you contribute to greener neighborhoods supporting enhanced air quality, shade provision, and aesthetic values that benefit all.</p>
+      <p>At Flora Gleam Pruning, we prioritize sustainable and environmentally friendly practices in all our tree care services. We ensure minimal ecological impact through responsible pruning, waste recycling, and habitat preservation...</p>
+      <p>Understanding tree biology allows us to nurture healthy growth cycles, improve urban canopy resilience, and promote biodiversity in your landscape. Our certified arborists use best arboricultural practices aligned with local environmental standards.</p>
+      <p>We engage in ongoing education and community outreach to keep you informed about responsible tree management and environmental stewardship.</p>
+      <p>By choosing Flora Gleam, you contribute to greener neighborhoods supporting enhanced air quality, shade provision, and aesthetic values that benefit all.</p>
+      <!-- This content volume simulates large text blocks -->
+    </article>
+  </section>
+
+  <section id="disclaimer" class="disclaimer" aria-label="Disclaimer">
+    <strong>Disclaimer:</strong> While Flora Gleam Pruning takes all necessary precautions, tree care involves outdoor work with inherent risks. Service prices may vary based on site conditions and specific requirements. All content provided is for informational purposes only and does not replace professional advice for individual property needs.
+  </section>
+
+  <section class="customer-satisfaction" aria-label="Customer Satisfaction Statement">
+    Your satisfaction is our priority. We strive to provide consistent, high-quality service ensuring your trees and landscape thrive beautifully year-round.
+  </section>
+
+  <section id="contact" class="address-section" aria-label="Contact Address">
+    <h2 class="section-title">Visit or Contact Us</h2>
+    <address style="text-align: center; font-size: 1.125rem; color: #065f46; font-weight: 600;">
+      345 E 24th St, New York, NY 10010, USA
+    </address>
+  </section>
+</main>
+
+<footer>
+  &copy; 2024 Flora Gleam Pruning – Expert Tree Care Services
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuButton = document.querySelector('.mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuButton.addEventListener('click', () => {
+    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+    menuButton.setAttribute('aria-expanded', !isExpanded);
+    if (mobileMenu.hasAttribute('hidden')) {
+      mobileMenu.removeAttribute('hidden');
+      mobileMenu.classList.add('show');
+      // enable tab for links
+      [...mobileMenu.querySelectorAll('a')].forEach(a => a.tabIndex = 0);
+    } else {
+      mobileMenu.setAttribute('hidden', '');
+      mobileMenu.classList.remove('show');
+      // disable tab for links
+      [...mobileMenu.querySelectorAll('a')].forEach(a => a.tabIndex = -1);
+    }
+  });
+
+  // Close mobile menu on link click
+  [...mobileMenu.querySelectorAll('a')].forEach(link => {
+    link.addEventListener('click', () => {
+      menuButton.setAttribute('aria-expanded', false);
+      mobileMenu.setAttribute('hidden', '');
+      mobileMenu.classList.remove('show');
+      [...mobileMenu.querySelectorAll('a')].forEach(a => a.tabIndex = -1);
+    });
+  });
+</script>
+</body>
+</html>
+

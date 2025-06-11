@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Contact Us - Flora Gleam Pruning Services</title>
+<style>
+  /* Google Fonts Inter for modern typography */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+  /* CSS Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, h1, h2, h3, h4, p, ul, li, form, label, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #e6f2e6 0%, #ffffff 100%);
+    color: #374151;
+    line-height: 1.6;
+    font-size: 18px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+     text-align: center;
+  }
+  a {
+    color: #065f46;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+    outline-offset: 2px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+  .container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  header {
+    background-color: #fefefe;
+    padding: 16px 0;
+    border-bottom: 1px solid #d1d5db;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #047857;
+    letter-spacing: 0.03em;
+  }
+  nav {
+    display: flex;
+    gap: 24px;
+  }
+  nav a {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #065f46;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  nav a.active, nav a:hover, nav a:focus {
+    background-color: #d1fae5;
+    outline: none;
+  }
+  .mobile-menu-button {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .mobile-menu-button svg {
+    fill: #065f46;
+    width: 28px;
+    height: 28px;
+  }
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    background: #f9fafb;
+    padding: 16px;
+    position: absolute;
+    top: 72px;
+    right: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  .mobile-nav.show {
+    display: flex;
+  }
+  main {
+    flex-grow: 1;
+    padding-top: 48px;
+    padding-bottom: 64px;
+    background: #f9fafb;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #065f46;
+  }
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  h2.section-title {
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: #065f46;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+  p {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+    color: #374151;
+    text-align: justify;
+    line-height: 1.75;
+  }
+  ul {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+    color: #374151;
+    line-height: 1.75;
+    list-style-type: disc;
+    padding-left: 40px;
+  }
+  form.contact-form {
+    max-width: 700px;
+    margin: 40px auto 80px;
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  label {
+    font-weight: 600;
+    color: #065f46;
+    display: block;
+    margin-bottom: 8px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #94a3b8;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  textarea:focus {
+    border-color: #16a34a;
+    outline: none;
+  }
+  textarea {
+    min-height: 140px;
+  }
+  button.btn-primary {
+    align-self: flex-start;
+    background: linear-gradient(135deg, #134e4a 0%, #22c55e 100%);
+    color: white;
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  button.btn-primary:hover,
+  button.btn-primary:focus {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(34, 197, 94, 0.4);
+    outline: none;
+  }
+  footer {
+    background: #065f46;
+    color: white;
+    padding: 24px 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  footer address {
+    font-style: normal;
+    margin-top: 8px;
+    font-size: 1rem;
+  }
+  @media (max-width: 767px) {
+    nav {
+      display: none;
+    }
+    .mobile-menu-button {
+      display: block;
+    }
+    p, ul {
+      max-width: 100%;
+      padding: 0 16px;
+    }
+    form.contact-form {
+      padding: 24px 16px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    p, ul {
+      max-width: 720px;
+    }
+    form.contact-form {
+      max-width: 600px;
+    }
+  }
+  @media (min-width: 1024px) {
+    nav {
+      display: flex;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Flora Gleam Pruning Homepage">Flora Gleam Pruning</a>
+    <nav role="navigation" aria-label="Primary navigation" class="nav-desktop">
+      <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0"aria-current="page">Contact us</a>
+    </nav>
+    <button class="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="mobile-nav" role="navigation" aria-label="Mobile primary navigation" hidden>
+    <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0"aria-current="page">Contact us</a>
+  </nav>
+</header>
+<main>
+  <h1>Contact Flora Gleam Pruning</h1>
+  <p>Our team at Flora Gleam Pruning values your feedback, questions, and concerns. Whether you seek detailed information about our tree pruning and cutting services, wish to request a personalized quote, or need assistance with scheduling, we invite you to use the contact methods below to get in touch with our experienced and dedicated professionals.</p>
+
+  <h2>Contact Form</h2>
+  <form class="contact-form" aria-label="Contact form for Flora Gleam Pruning services" novalidate>
+    <div>
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required aria-required="true" placeholder="Your full name" />
+    </div>
+    <div>
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email" required aria-required="true" placeholder="your.email@example.com" />
+    </div>
+    <div>
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567" />
+    </div>
+    <div>
+      <label for="service">Interested Service</label>
+      <input type="text" id="service" name="service" placeholder="E.g., Tree Pruning, Emergency Tree Service" />
+    </div>
+    <div>
+      <label for="message">Additional Message *</label>
+      <textarea id="message" name="message" required aria-required="true" placeholder="Please write your message or inquiry here."></textarea>
+    </div>
+    <button type="submit" class="btn-primary">Send Message</button>
+  </form>
+
+  <h2>Phone and Email Contact</h2>
+  <p>You can also reach us directly by phone or email. Our office hours are Monday to Friday, 8 AM to 6 PM Eastern Time, with emergency services available 24/7.</p>
+  <ul>
+    <li><strong>Phone:</strong> +1 (818) 555-2245</li>
+    <li><strong>Email:</strong> contact@floragleampruning.com</li>
+  </ul>
+
+  <h2>Office Location</h2>
+  <p>Our office is conveniently located in the heart of New York City. Feel free to visit us during business hours to discuss your tree care needs in person or to meet with our specialists to develop a customized plan tailored to your property.</p>
+  <p><strong>Address:</strong> 345 E 24th St, New York, NY 10010, USA</p>
+
+  <h2>Extended Information and FAQs</h2>
+
+  <p>We understand that natural tree maintenance and pruning are important to you, and likewise, that you may have many questions about our service area, pricing, response times, safety protocols, and commitment to environmental responsibility. Below are extensive topics addressed in detail to provide clarity and build trust with our valued customers.</p>
+
+  <h3>Service Areas and Availability</h3>
+  <p>Flora Gleam Pruning proudly serves residential and commercial clients throughout New York City and the surrounding metropolitan areas with comprehensive services covering every aspect of tree cutting, pruning, maintenance, and emergency intervention. Our fleet and team dynamically scale with the seasons to ensure timely responses, particularly after severe weather events or during high-demand periods typically observed in springtime and early summer. Our robust operational infrastructure allows us to commit to quick turnarounds and flexible scheduling options tailored to your individual needs and specific site conditions.</p>
+
+  <h3>Scheduling and Response Time Expectations</h3>
+  <p>Timely and efficient service delivery is foundational to our company’s core values. Upon reaching out through any contact method including online forms, phone lines, or direct email communication, your request will be acknowledged and acted upon promptly. Typically, inquiries receive responses within 24 business hours, ensuring minimal wait periods for consultations or scheduling. For emergency applications—such as hazardous tree removal due to storm damage or immediate safety concerns—our dedicated emergency response team is prepared to deploy rapidly, often reaching your location within a few short hours to mitigate further damage and maintain safety for you, your family, and your property.</p>
+
+  <h3>Custom Service Consultations</h3>
+  <p>Recognizing that each property presents unique challenges and opportunities, our expert arborists offer detailed on-site or virtual consultations to assess tree health, structural stability, growth patterns, and environmental integration. These evaluations inform personalized pruning recommendations, ensuring optimal tree vigor and landscape harmony. Our consultation process is thorough, transparent, and collaborative, empowering you with knowledge and guidance to make informed decisions about your outdoor spaces.</p>
+
+  <h3>Pricing Transparency and Estimates</h3>
+  <p>At Flora Gleam Pruning, we maintain an unwavering commitment to pricing transparency and integrity. Detailed written estimates outlining the scope of work, expected duration, equipment deployment, and cost breakdown are provided prior to any service initiation. Our pricing structures reflect multiple factors, including tree dimensions, accessibility, industry-standard practices, material disposal requirements, and any regional regulatory considerations. Understanding your unique budget constraints is a priority; we strive to offer practical, cost-effective solutions without compromising on quality or safety.</p>
+
+  <h3>Safety and Sustainability Practices</h3>
+  <p>Maintaining the highest safety standards is paramount in our operations. Compliance with OSHA and local regulatory frameworks governs all pruning, cutting, and removal methods employed by our licensed professionals. Emphasis is placed on preserving tree health and surrounding ecosystems through selective pruning techniques, minimal-impact machinery usage, and environmentally responsible waste management including recycling and composting of organic debris. Flora Gleam Pruning actively pursues sustainability initiatives that align with urban forestry stewardship, promoting biodiversity, soil health, and air quality enhancement through conscientious service delivery.</p>
+
+  <h3>Customer Testimonials and References</h3>
+  <p>Prospective clients are encouraged to review the extensive testimonials from satisfied customers documenting successful project outcomes, exceptional customer service, and ethical business conduct. Detailed case studies illustrate a diverse portfolio of projects ranging from single-tree maintenance to complex multi-property landscape transformations. References and credentials are readily available upon request, providing additional assurance of our professionalism and industry recognition.</p>
+
+  <h3>Communication and Feedback</h3>
+  <p>Flora Gleam Pruning fosters open communication channels throughout all phases of engagement, from initial consultation through project completion and aftercare. Customer feedback is actively solicited and carefully reviewed to continually refine methodologies, address emergent concerns, and incorporate innovative practices responsive to client needs. Our customer care representatives are trained to provide prompt, empathetic, and effective support tailored to your individual requirements.</p>
+
+  <h3>Environmental Commitment and Community Involvement</h3>
+  <p>As an integral part of the communities we serve, Flora Gleam Pruning is dedicated to environmental education, urban green space preservation, and philanthropic partnerships. Participation in local tree-planting campaigns, public workshops on sustainable gardening, and collaboration with municipal agencies exemplify our commitment to ecological responsibility and social engagement beyond routine commercial activities.</p>
+
+  <h3>Payment Methods and Policies</h3>
+  <p>We provide flexible payment arrangements accommodating various client preferences including electronic funds transfer, major credit cards, and traditional check payments. Payment terms are transparently communicated and incorporated into service agreements to prevent ambiguity. For substantial projects, financing schemes and staggered payment plans are available to facilitate client budgeting and project planning.</p>
+
+  <h3>Requesting Additional Services</h3>
+  <p>Beyond our core pruning and cutting offerings, Flora Gleam Pruning provides complementary services such as landscape design consultations, irrigation system advice, seasonal care packages, and pest management support. Interested parties are invited to specify additional needs via the contact form or verbal consultation, enabling expert coordination and integration of services within cohesive management plans.</p>
+
+  <h3>COVID-19 Safety Measures</h3>
+  <p>In alignment with public health mandates and evolving guidelines, Flora Gleam Pruning maintains rigorous sanitation and personal protective equipment protocols for all site visits and service deliveries. We continually adapt practices to ensure the wellbeing of clients, employees, and community members, including social distancing measures and contactless payment options where feasible.</p>
+
+  <h3>Comprehensive Customer Support and Service Excellence</h3>
+  <p>Our commitment extends beyond the physical care of trees to creating exceptional customer experiences that foster trust, confidence, and lasting relationships. Support staff are readily accessible via phone, email, and online inquiry portals to address all questions or concerns with professionalism and courtesy. We track service quality metrics and integrate customer insights to perpetually elevate our standards and meet evolving client expectations.</p>
+
+  <h3>Detailed Project Documentation</h3>
+  <p>For each project undertaken, detailed records including photographic evidence, service logs, pruning plans, risk assessments, and compliance certifications are maintained. This documentation supports transparency, accountability, and informed decision-making for subsequent care or audits by clients or regulatory entities.</p>
+
+  <h3>Accessibility and Inclusivity Commitment</h3>
+  <p>Flora Gleam Pruning pledges to provide accessible, inclusive service delivery accommodating diverse client needs and preferences, including language support, accommodations for persons with disabilities, and flexible communication methods to ensure equitable engagement opportunities.</p>
+
+  <h3>Planning for Long-Term Tree Health</h3>
+  <p>We collaborate closely with clients to develop strategic care plans tailored to the specific species, age, and context of individual trees or groves. These comprehensive plans include timing and techniques for pruning cycles, nutrient management, disease monitoring, and integration with overall landscape design goals ensuring sustained environmental and aesthetic benefits.</p>
+
+  <h3>Educational Resources and Community Outreach</h3>
+  <p>We offer educational materials, workshops, and consultations designed to empower property owners and landscape professionals with knowledge and skills to maintain healthy trees, identify potential hazards, and implement best practices. Our outreach efforts contribute to enhanced urban forest resilience and community awareness.</p>
+
+  <h3>Engagement with Regulatory Compliance</h3>
+  <p>Flora Gleam Pruning adheres to all applicable local and state regulations governing tree care, debris disposal, noise control, and workplace safety. We routinely participate in professional associations to stay abreast of legal updates and industry developments ensuring compliance and leadership within the arboricultural field.</p>
+
+  <h3>Comprehensive Insurance and Liability Coverage</h3>
+  <p>Clients are assured of our full insurance coverage protecting against property damage, personal injury, and environmental liabilities during service delivery. Certificates of insurance are available upon request, reflecting our professional responsibility and financial stability.</p>
+
+  <h3>Project Management and Quality Assurance</h3>
+  <p>Dedicated project managers oversee larger or complex engagements to coordinate interdisciplinary teams, manage timelines, optimize resources, and ensure fulfillment of agreed-upon objectives. Quality assurance procedures include regular site inspections, client feedback loops, and standardized performance criteria tailored to each project scope.</p>
+
+  <h3>FAQ: Common Questions Answered</h3>
+  <p>Throughout years of experience, we have compiled and refined detailed answers to the most frequently asked questions including pruning best practices, timing recommendations, pricing estimates, and environmental impact considerations, serving as a useful reference for prospective and current clients.</p>
+
+  <h3>Why Choose Flora Gleam Pruning</h3>
+  <p>Our company combines expert knowledge, cutting-edge technology, and personalized service to provide exceptional tree care solutions that prioritize health, safety, customer satisfaction, and environmental stewardship. Our professional team’s commitment to excellence makes Flora Gleam Pruning a reliable choice for all tree-related needs.</p>
+
+  <h3>Contact Us Anytime</h3>
+  <p>Regardless of project size or complexity, we welcome your inquiries at any time. Your dedicated representative will guide you through the process, provide expert advice, and ensure that your experience with Flora Gleam Pruning is seamless and fulfilling from start to finish.</p>
+
+  <p>Thank you for considering Flora Gleam Pruning as your trusted partner in maintaining the beauty and safety of your outdoor environment. We look forward to serving you.</p>
+
+</main>
+<footer>
+  <address>
+    345 E 24th St, New York, NY 10010, USA | Phone: +1 (818) 555-2245
+  </address>
+  &copy; 2024 Flora Gleam Pruning – Expert Tree Care Services
+</footer>
+
+<script>
+  const menuButton = document.querySelector('.mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuButton.addEventListener('click', () => {
+    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+    menuButton.setAttribute('aria-expanded', !isExpanded);
+    if (mobileMenu.hasAttribute('hidden')) {
+      mobileMenu.removeAttribute('hidden');
+      mobileMenu.classList.add('show');
+      [...mobileMenu.querySelectorAll('a')].forEach(a => a.tabIndex = 0);
+    } else {
+      mobileMenu.setAttribute('hidden', '');
+      mobileMenu.classList.remove('show');
+      [...mobileMenu.querySelectorAll('a')].forEach(a => a.tabIndex = -1);
+    }
+  });
+
+  [...mobileMenu.querySelectorAll('a')].forEach(link => {
+    link.addEventListener('click', () => {
+      menuButton.setAttribute('aria-expanded', false);
+      mobileMenu.setAttribute('hidden', '');
+      mobileMenu.classList.remove('show');
+      [...mobileMenu.querySelectorAll('a')].forEach(a => a.tabIndex = -1);
+    });
+  });
+</script>
+</body>
+</html>
+

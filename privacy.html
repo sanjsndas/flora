@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Privacy Policy - Flora Gleam Pruning Services</title>
+<style>
+  /* Google Fonts Inter for modern typography */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+  /* CSS Reset */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, h1, h2, h3, h4, p, ul, li, figure {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(180deg, #e6f2e6 0%, #ffffff 100%);
+    color: #374151;
+    line-height: 1.6;
+    font-size: 18px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  a {
+    color: #065f46;
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+    outline-offset: 2px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+  .container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  header {
+    background-color: #fefefe;
+    padding: 16px 0;
+    border-bottom: 1px solid #d1d5db;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #047857;
+    letter-spacing: 0.03em;
+  }
+  nav {
+    display: flex;
+    gap: 24px;
+  }
+  nav a {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #065f46;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  nav a.active, nav a:hover, nav a:focus {
+    background-color: #d1fae5;
+    outline: none;
+  }
+  .mobile-menu-button {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .mobile-menu-button svg {
+    fill: #065f46;
+    width: 28px;
+    height: 28px;
+  }
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+    background: #f9fafb;
+    padding: 16px;
+    position: absolute;
+    top: 72px;
+    right: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  .mobile-nav.show {
+    display: flex;
+  }
+  main {
+    flex-grow: 1;
+    padding-top: 48px;
+    padding-bottom: 64px;
+    background: #f9fafb;
+  }
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    color: #065f46;
+  }
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  h2.section-title {
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: #065f46;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+  p {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+    color: #374151;
+    text-align: justify;
+    line-height: 1.75;
+  }
+  ul {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+    color: #374151;
+    line-height: 1.75;
+    list-style-type: disc;
+    padding-left: 40px;
+  }
+  footer {
+    background: #065f46;
+    color: white;
+    padding: 24px 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  footer address {
+    font-style: normal;
+    margin-top: 8px;
+    font-size: 1rem;
+  }
+  @media (max-width: 767px) {
+    nav {
+      display: none;
+    }
+    .mobile-menu-button {
+      display: block;
+    }
+    p, ul {
+      max-width: 100%;
+      padding: 0 16px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    p, ul {
+      max-width: 720px;
+    }
+  }
+  @media (min-width: 1024px) {
+    nav {
+      display: flex;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Flora Gleam Pruning Homepage">Flora Gleam Pruning</a>
+    <nav role="navigation" aria-label="Primary navigation" class="nav-desktop">
+     <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0"aria-current="page">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+    </nav>
+    <button class="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="mobile-nav" role="navigation" aria-label="Mobile primary navigation" hidden>
+    <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0"aria-current="page">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & conditons</a>
+        <a href="cookies.html"tabindex="0">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us</a>
+  </nav>
+</header>
+<main>
+  <h1>Privacy Policy for Flora Gleam Pruning Services</h1>
+
+  <p>At Flora Gleam Pruning, we take your privacy seriously. This Privacy Policy outlines how we collect, use, and safeguard your personal information when you visit our website or use our services. We are committed to protecting your personal data and respecting your privacy rights in accordance with applicable laws and regulations.</p>
+
+  <h2>1. Information We Collect</h2>
+
+  <p>We collect various types of information to provide our services efficiently and improve your experience. The information collected includes but is not limited to:</p>
+  <ul>
+    <li><strong>Personal Identification Information:</strong> Such as your name, email address, phone number, mailing address, and other contact details you voluntarily provide.</li>
+    <li><strong>Usage Data:</strong> Information on how you interact with our website, including device information, browser type, pages visited, and browsing patterns collected via cookies or similar technologies.</li>
+    <li><strong>Service Information:</strong> Details about the services you request, quotes, inquiries, feedback, and communications with our team.</li>
+  </ul>
+
+  <h2>2. How We Use Your Information</h2>
+
+  <p>Your information is used to:</p>
+  <ul>
+    <li>Provide and manage our services efficiently and communicate with you regarding your service requests.</li>
+    <li>Improve our website, customer service, and marketing efforts to better meet your needs.</li>
+    <li>Send important notices, service updates, promotions, or administrative messages related to your account or services.</li>
+    <li>Comply with legal obligations and protect our or others’ rights, safety, or property.</li>
+  </ul>
+
+  <h2>3. Information Sharing and Disclosure</h2>
+
+  <p>We value your trust and do not sell your personal data. We may share your information in the following limited circumstances:</p>
+  <ul>
+    <li><strong>With Service Providers:</strong> Trusted third parties who assist us in service delivery, website hosting, payment processing, or marketing.</li>
+    <li><strong>For Legal Reasons:</strong> If required by law, regulation, or legal process to protect rights, safety, or compliance obligations.</li>
+    <li><strong>Business Transfers:</strong> In case of mergers, acquisitions, or sales of assets, we may transfer your information as part of the transaction.</li>
+  </ul>
+
+  <h2>4. Cookies and Tracking Technologies</h2>
+
+  <p>Our website uses cookies and similar tracking technologies to enhance user experience, analyze site traffic, and provide tailored content. You can control cookie preferences through your browser settings; however, disabling cookies may affect website functionality.</p>
+
+  <h2>5. Data Security</h2>
+
+  <p>We implement robust security measures to protect your data from unauthorized access, alteration, or disclosure. Our website uses secure protocols, encryption, and access controls to safeguard your personal information during online transmission and storage.</p>
+
+  <h2>6. Your Rights and Choices</h2>
+
+  <p>Depending on your location, you may have rights to access, correct, delete, or restrict processing of your personal data. We encourage you to contact us to exercise these rights or if you have any questions about your personal information.</p>
+
+  <h2>7. Retention of Data</h2>
+
+  <p>We retain your personal data only as long as necessary to fulfill the purposes outlined in this Privacy Policy, abide by legal obligations, resolve disputes, and enforce agreements.</p>
+
+  <h2>8. International Data Transfers</h2>
+
+  <p>Flora Gleam Pruning operates primarily in the USA. If your data is transferred outside of your country, we ensure appropriate safeguards are in place in compliance with applicable privacy laws.</p>
+
+  <h2>9. Third-Party Links</h2>
+
+  <p>Our website may contain links to third-party sites for your convenience. We are not responsible for the privacy practices or content of such websites. We recommend reviewing their privacy policies prior to sharing any information.</p>
+
+  <h2>10. Children’s Privacy</h2>
+
+  <p>Our website and services are not directed at children under 16 years of age. We do not knowingly collect personal data from children without parental consent. If you believe we have inadvertently collected such data, please contact us immediately.</p>
+
+  <h2>11. Changes to this Privacy Policy</h2>
+
+  <p>We may update this Privacy Policy periodically to reflect changes in our practices, legal requirements, or technological advances. Changes will be posted on this page with an updated effective date. We encourage you to review this policy regularly.</p>
+
+  <h2>12. How to Contact Us</h2>
+
+  <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please reach out to us:</p>
+  <address>
+    Flora Gleam Pruning<br />
+    345 E 24th St, New York, NY 10010, USA<br />
+    Phone: +1 (212) 555-1234<br />
+    Email: privacy@floragleampruning.com
+  </address>
+
+  <h2>13. Data Minimization Principles</h2>
+  <p>We follow strict data minimization principles, collecting only personal data that is necessary for the specified purposes of providing our pruning services. This approach helps ensure we do not retain excessive or irrelevant personal information, reducing privacy risks and enhancing data security within our operations.</p>
+
+  <h2>14. Automated Decision Making and Profiling</h2>
+  <p>Flora Gleam Pruning does not employ automated decision-making or profiling techniques that might have a significant impact on your rights or services provided. All decisions related to service provision and customer interactions are conducted by our trained professionals, ensuring fair and transparent handling.</p>
+
+  <h2>15. Data Subject Access Requests</h2>
+  <p>You may request access to the personal data we hold about you, including receiving a copy of that data in a portable and machine-readable format. We aim to respond to such requests promptly, typically within one month as required by law.</p>
+
+  <h2>16. Privacy Impact Assessments (PIAs)</h2>
+  <p>As part of our ongoing commitment to data privacy, we conduct Privacy Impact Assessments for high-risk data processing activities. PIAs help us identify risks, assess potential impacts on data subjects, and implement necessary measures to mitigate those risks proactively.</p>
+
+  <h2>17. Data Protection by Default and by Design</h2>
+  <p>Privacy considerations are integrated systematically into system design and service processes. We ensure that only required data is collected, accessed, and processed with secure defaults enabled to minimize data exposure and enhance overall privacy protection.</p>
+
+  <h2>18. Transparency and Accountability</h2>
+  <p>Flora Gleam Pruning maintains transparency in its data processing activities by documenting policies, providing clear privacy notices, and fostering accountability through regular audits, employee training, and adherence to ethical standards.</p>
+
+  <h2>19. Data Breach Notification Procedures</h2>
+  <p>In case of a data breach, our incident response plan includes prompt containment, assessment, notification to affected individuals and regulatory authorities, and remediation steps. Our team is trained to handle such incidents efficiently to minimize any potential harm and maintain compliance with legal requirements.</p>
+
+  <h2>20. Cross-border Data Transfer Mechanisms</h2>
+  <p>When transferring data across international boundaries, we rely on legal mechanisms such as Standard Contractual Clauses, adequacy decisions, or binding corporate rules to safeguard the privacy rights of data subjects and maintain lawful data flows.</p>
+
+  <h2>21. Use of Privacy-Enhancing Technologies</h2>
+  <p>We proactively evaluate and implement privacy-enhancing technologies (PETs) to strengthen data protection measures including differential privacy, pseudonymization, and secure multiparty computation where applicable.</p>
+
+  <h2>22. Regular Privacy Audits and Assessments</h2>
+  <p>Periodic privacy audits are conducted to assess compliance with privacy regulations, internal policies, and best practices. Findings are addressed through corrective actions and continuous improvement cycles to ensure sustained privacy excellence.</p>
+
+  <h2>23. Training and Awareness Programs</h2>
+  <p>All Flora Gleam Pruning employees and contractors undergo comprehensive privacy and security training programs designed to instill a strong culture of privacy awareness and responsibility within the organization.</p>
+
+  <h2>24. Customer Data Rights under Global Regulations</h2>
+  <p>We have structured our practices to meet requirements imposed by GDPR, CCPA, and similar laws worldwide, assuring customers of their fundamental rights in relation to personal data access, rectification, deletion, portability, objection, and restriction of processing.</p>
+
+  <h2>25. Use of Data for Research and Development</h2>
+  <p>Aggregated and anonymized data may be used for research and development purposes to enhance service quality, explore new solutions for urban forestry care, and contribute to the scientific community’s understanding of tree health management.</p>
+
+  <h2>26. Policy Regarding Automated Marketing and Retargeting</h2>
+  <p>Flora Gleam Pruning uses responsible marketing automation and retargeting practices with users’ prior consent where applicable, ensuring transparency, opt-out mechanisms, and respecting user preferences to balance business interests with privacy rights.</p>
+
+  <h2>27. Third-Party Social Media Plugins</h2>
+  <p>Our website may include social media plugins enabling interactions such as sharing content or connecting with our social media profiles. These plugins may collect data as per respective social media platforms’ privacy policies; we encourage users to review those policies.</p>
+
+  <h2>28. Contact Preferences and Communication Choices</h2>
+  <p>You may update your communication preferences at any time by contacting us or using subscription management tools embedded in our communications, allowing you to choose the types of communications you wish to receive or unsubscribe completely.</p>
+
+  <h2>29. Data De-identification Practices</h2>
+  <p>In scenarios where personal data is no longer necessary for service delivery, we employ data de-identification techniques to remove direct identifiers, enabling continued analysis and reporting without compromising individual privacy.</p>
+
+  <h2>30. User Feedback and Data Input Policies</h2>
+  <p>When you provide feedback or data inputs we encourage transparency: please avoid sharing sensitive personal information or others’ data without consent. Feedback is used solely to improve user experience and service delivery.</p>
+
+  <h2>31. User Authentication and Account Security</h2>
+  <p>For services requiring account creation or authentication, Flora Gleam Pruning implements advanced security protocols including multifactor authentication and regular security audits to protect user accounts and prevent unauthorized access. We encourage users to create strong, unique passwords and to maintain the confidentiality of their login credentials at all times to reduce risks.</p>
+
+  <h2>32. Data Anonymization and Aggregation Techniques</h2>
+  <p>We apply data anonymization and aggregation methods to protect your identity in analytics and reporting, ensuring personal identifiers are removed or obscured. This practice allows us to analyze usage patterns and trends effectively without compromising individual privacy, contributing to continuous improvement of our services and customer experience.</p>
+
+  <h2>33. Policy on Data Transfers to Subprocessors</h2>
+  <p>When engaging subprocessors, we ensure contractual commitments and strict data protection obligations are in place. Any transfer of data to subprocessors outside the original jurisdiction is conducted under compliant frameworks and legal safeguards, ensuring your data privacy is continuously upheld throughout the processing chain.</p>
+
+  <h2>34. Use of Encryption and Secure Communications</h2>
+  <p>All sensitive data is transmitted over encrypted channels using industry-standard cryptographic protocols such as TLS to protect data in transit. We also employ encryption at rest and secure key management practices to protect stored data against unauthorized access or loss, reinforcing our commitment to customer data security.</p>
+
+  <h2>35. Handling Customer Inquiries and Requests</h2>
+  <p>Our dedicated customer support team processes privacy-related inquiries attentively and efficiently, ensuring compliance with data protection laws and timely resolution. We maintain logs of all requests and correspondences while applying appropriate confidentiality and security controls during communication and record-keeping.</p>
+
+  <h2>36. Data Protection Impact Assessments (DPIAs)</h2>
+  <p>As part of our ongoing commitment to data privacy, we conduct Data Protection Impact Assessments for high-risk data processing activities. DPIAs help us identify risks, assess potential impacts on data subjects, and implement necessary measures to mitigate those risks proactively.</p>
+
+  <h2>37. Data Protection by Default and by Design</h2>
+  <p>Privacy considerations are integrated systematically into system design and service processes. We ensure that only required data is collected, accessed, and processed with secure defaults enabled to minimize data exposure and enhance overall privacy protection.</p>
+
+  <h2>38. Transparency and Accountability</h2>
+  <p>Flora Gleam Pruning maintains transparency in its data processing activities by documenting policies, providing clear privacy notices, and fostering accountability through regular audits, employee training, and adherence to ethical standards.</p>
+
+  <h2>39. Data Breach Notification Procedures</h2>
+  <p>In case of a data breach, our incident response plan includes prompt containment, assessment, notification to affected individuals and regulatory authorities, and remediation steps. Our team is trained to handle such incidents efficiently to minimize any potential harm and maintain compliance with legal requirements.</p>
+
+  <h2>40. Cross-border Data Transfer Mechanisms</h2>
+  <p>When transferring data across international boundaries, we rely on legal mechanisms such as Standard Contractual Clauses, adequacy decisions, or binding corporate rules to safeguard the privacy rights of data subjects and maintain lawful data flows.</p>
+
+  <h2>41. Use of Privacy-Enhancing Technologies</h2>
+  <p>We proactively evaluate and implement privacy-enhancing technologies (PETs) to strengthen data protection measures including differential privacy, pseudonymization, and secure multiparty computation where applicable.</p>
+
+  <h2>42. Regular Privacy Audits and Assessments</h2>
+  <p>Periodic privacy audits are conducted to assess compliance with privacy regulations, internal policies, and best practices. Findings are addressed through corrective actions and continuous improvement cycles to ensure sustained privacy excellence.</p>
+
+  <h2>43. Training and Awareness Programs</h2>
+  <p>All Flora Gleam Pruning employees and contractors undergo comprehensive privacy and security training programs designed to instill a strong culture of privacy awareness and responsibility within the organization.</p>
+
+  <h2>44. Customer Data Rights under Global Regulations</h2>
+  <p>We have structured our practices to meet requirements imposed by GDPR, CCPA, and similar laws worldwide, assuring customers of their fundamental rights in relation to personal data access, rectification, deletion, portability, objection, and restriction of processing.</p>
+
+  <h2>45. Use of Data for Research and Development</h2>
+  <p>Aggregated and anonymized data may be used for research and development purposes to enhance service quality, explore new solutions for urban forestry care, and contribute to the scientific community’s understanding of tree health management.</p>
+
+  <h2>46. Policy Regarding Automated Marketing and Retargeting</h2>
+  <p>Flora Gleam Pruning uses responsible marketing automation and retargeting practices with users’ prior consent where applicable, ensuring transparency, opt-out mechanisms, and respecting user preferences to balance business interests with privacy rights.</p>
+
+  <h2>47. Third-Party Social Media Plugins</h2>
+  <p>Our website may include social media plugins enabling interactions such as sharing content or connecting with our social media profiles. These plugins may collect data as per respective social media platforms’ privacy policies; we encourage users to review those policies.</p>
+
+  <h2>48. Contact Preferences and Communication Choices</h2>
+  <p>You may update your communication preferences at any time by contacting us or using subscription management tools embedded in our communications, allowing you to choose the types of communications you wish to receive or unsubscribe completely.</p>
+
+  <h2>49. Data De-identification Practices</h2>
+  <p>In scenarios where personal data is no longer necessary for service delivery, we employ data de-identification techniques to remove direct identifiers, enabling continued analysis and reporting without compromising individual privacy.</p>
+
+  <h2>50. User Feedback and Data Input Policies</h2>
+  <p>When you provide feedback or data inputs we encourage transparency: please avoid sharing sensitive personal information or others’ data without consent. Feedback is used solely to improve user experience and service delivery.</p>
+
+  
+
+</main>
+<footer>
+  <address>
+    345 E 24th St, New York, NY 10010, USA | Phone: +1 (818) 555-2245
+  </address>
+  &copy; 2024 Flora Gleam Pruning – Expert Tree Care Services
+</footer>
+
+<script>
+  const menuButton = document.querySelector('.mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuButton.addEventListener('click', () => {
+    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+    menuButton.setAttribute('aria-expanded', !isExpanded);
+    if (mobileMenu.hasAttribute('hidden')) {
+      mobileMenu.removeAttribute('hidden');
+      mobileMenu.classList.add('show');
+      [...mobileMenu.querySelectorAll('a')].forEach(a => a.tabIndex = 0);
+    } else {
+      mobileMenu.setAttribute('hidden', '');
+      mobileMenu.classList.remove('show');
+      [...mobileMenu.querySelectorAll('a')].forEach(a => a.tabIndex = -1);
+    }
+  });
+
+  [...mobileMenu.querySelectorAll('a')].forEach(link => {
+    link.addEventListener('click', () => {
+      menuButton.setAttribute('aria-expanded', false);
+      mobileMenu.setAttribute('hidden', '');
+      mobileMenu.classList.remove('show');
+      [...mobileMenu.querySelectorAll('a')].forEach(a => a.tabIndex = -1);
+    });
+  });
+</script>
+
+</body>
+</html>
+
